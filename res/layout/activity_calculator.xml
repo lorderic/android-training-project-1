@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <EditText
+        android:id="@+id/etInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="numberDecimal" >
+
+    </EditText>
+
+        
+    <Button
+        android:id="@+id/btn15Percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="calculateTip15"
+        android:text="15%" />
+    
+    <Button
+        android:id="@+id/btn10Percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/btn15Percent"
+        android:layout_alignBottom="@+id/btn15Percent"
+        android:onClick="calculateTip10"
+        android:text="10%" />
+    
+    <Button
+        android:id="@+id/btn20Percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/btn15Percent"
+        android:layout_alignBottom="@+id/btn15Percent"
+        android:onClick="calculateTip20"
+        android:text="20%" />
+
+    <TextView
+        android:id="@+id/tvTipOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:text="Tip is: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>
