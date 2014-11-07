@@ -4,27 +4,24 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
+    <TextView
+        android:id="@+id/tvAmountPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etInput"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:text="Enter total amount:"
+        android:textSize="15sp" />
+    
     <EditText
         android:id="@+id/etInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/tvAmountPrompt"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
         android:ems="10"
-        android:inputType="numberDecimal" >
-
-    </EditText>
-
-        
-    <Button
-        android:id="@+id/btn15Percent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="calculateTip15"
-        android:text="15%" />
+        android:inputType="numberDecimal" />
     
     <Button
         android:id="@+id/btn10Percent"
@@ -46,6 +43,25 @@
         android:onClick="calculateTip20"
         android:text="20%" />
 
+
+    <TextView
+        android:id="@+id/tvPercentagePrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn10Percent"
+        android:layout_alignLeft="@+id/btn10Percent"
+        android:layout_marginBottom="10dp"
+        android:text="Select tip percentage:"
+        android:textSize="15sp" />
+    
+    <Spinner
+        android:id="@+id/mySpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSplitPrompt"
+        android:layout_alignLeft="@+id/tvSplitPrompt"
+        android:layout_marginTop="10dp" />
+    
     <TextView
         android:id="@+id/tvTipOutput"
         android:layout_width="wrap_content"
@@ -54,6 +70,73 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
         android:text="Tip is: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/tvTotalOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvTipOutput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Total after tip: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/btn15Percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:onClick="calculateTip15"
+        android:text="15%" />
+
+    <TextView
+        android:id="@+id/tvSplitPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn10Percent"
+        android:layout_below="@+id/etTipInput"
+        android:layout_marginTop="20dp"
+        android:text="Select number of people:"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/etTipInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn15Percent"
+        android:layout_alignRight="@+id/btn15Percent"
+        android:layout_below="@+id/btn10Percent"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Tip %"
+        android:minHeight="48dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnApply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/etTipInput"
+        android:layout_alignRight="@+id/btn20Percent"
+        android:layout_alignTop="@+id/etTipInput"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/etTipInput"
+        android:text="Apply"
+        android:textSize="14sp" 
+        android:onClick="calculateCustomizedTip"/>
+
+    <TextView
+        android:id="@+id/tvPercentageSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etTipInput"
+        android:layout_alignBottom="@+id/etTipInput"
+        android:layout_alignRight="@+id/etTipInput"
+        android:layout_marginRight="10dp"
+        android:text="%"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
